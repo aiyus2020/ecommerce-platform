@@ -14,7 +14,7 @@ jobs:
 
       # Backend build & push
       - name: Build backend image
-        run: docker build -t yourusername/simple-ecommerce-backend ./backend
+        run: docker build -t aiyus/simple-ecommerce-backend ./api
 
       - name: Docker login
         uses: docker/login-action@v2
@@ -23,14 +23,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Push backend image
-        run: docker push yourusername/simple-ecommerce-backend
+        run: docker push aiyus/simple-ecommerce-backend
 
-      # Frontend build & push
+      # Frontend build & pushs
       - name: Build frontend image
-        run: docker build -t yourusername/simple-ecommerce-frontend ./frontend
+        run: docker build -t aiyus/simple-ecommerce-frontend ./webapp
 
       - name: Push frontend image
-        run: docker push yourusername/simple-ecommerce-frontend
+        run: docker push aiyus/simple-ecommerce-frontend
 
       # Deploy to EC2
       - name: SSH Deploy to EC2

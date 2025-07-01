@@ -25,7 +25,7 @@ jobs:
       - name: Push backend image
         run: docker push aiyus/simple-ecommerce-backend
 
-      # Frontend build & pushs
+      # Frontend build & push
       - name: Build frontend image
         run: docker build -t aiyus/simple-ecommerce-frontend ./webapp
 
